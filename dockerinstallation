@@ -1,0 +1,603 @@
+
+syamp@Syam MINGW64 /c/Syam/DevOps/DOCKER
+$ date
+Mon Dec 22 10:22:18 IST 2025
+
+syamp@Syam MINGW64 /c/Syam/DevOps/DOCKER
+$ pwd
+/c/Syam/DevOps/DOCKER
+
+syamp@Syam MINGW64 /c/Syam/DevOps/DOCKER
+$ ls -al
+total 4
+drwxr-xr-x 1 syamp 197609    0 Dec 22 10:21  ./
+drwxr-xr-x 1 syamp 197609    0 Dec 22 10:21  ../
+-rw-r--r-- 1 syamp 197609 1678 Dec 22 10:18 'SPR (1).pem'
+
+syamp@Syam MINGW64 /c/Syam/DevOps/DOCKER
+$ ssh -i "SPR.pem" ubuntu@ec2-51-21-193-185.eu-north-1.compute.amazonaws.com
+Warning: Identity file SPR.pem not accessible: No such file or directory.
+The authenticity of host 'ec2-51-21-193-185.eu-north-1.compute.amazonaws.com (64:ff9b::3315:c1b9)' can't be established.
+ED25519 key fingerprint is: SHA256:UApNtQRtaPPZ3SwJRdTm9uEVx0t5o3P8zq8WQ3sScgU
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'ec2-51-21-193-185.eu-north-1.compute.amazonaws.com' (ED25519) to the list of known hosts.
+ubuntu@ec2-51-21-193-185.eu-north-1.compute.amazonaws.com: Permission denied (publickey).
+
+syamp@Syam MINGW64 /c/Syam/DevOps/DOCKER
+$ ssh -i "SPR.pem" ubuntu@ec2-51-21-193-185.eu-north-1.compute.amazonaws.com
+ubuntu@ec2-51-21-193-185.eu-north-1.compute.amazonaws.com: Permission denied (publickey).
+
+syamp@Syam MINGW64 /c/Syam/DevOps/DOCKER
+$ ll
+total 4
+-rw-r--r-- 1 syamp 197609 1678 Dec 22 10:18 'SPR .pem'
+
+syamp@Syam MINGW64 /c/Syam/DevOps/DOCKER
+$ ssh -i "SPR.pem" ubuntu@ec2-51-21-193-185.eu-north-1.compute.amazonaws.com
+Warning: Identity file SPR.pem not accessible: No such file or directory.
+ubuntu@ec2-51-21-193-185.eu-north-1.compute.amazonaws.com: Permission denied (publickey).
+
+syamp@Syam MINGW64 /c/Syam/DevOps/DOCKER
+$ ssh -i "SPR.pem" ubuntu@ec2-51-21-193-185.eu-north-1.compute.amazonaws.com
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.14.0-1015-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Mon Dec 22 04:56:20 UTC 2025
+
+  System load:  0.01              Temperature:           -273.1 C
+  Usage of /:   25.9% of 6.71GB   Processes:             110
+  Memory usage: 22%               Users logged in:       0
+  Swap usage:   0%                IPv4 address for ens5: 172.31.41.19
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@ip-172-31-41-19:~$ date
+Mon Dec 22 04:56:44 UTC 2025
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$ pwd
+/home/ubuntu
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$ ls -al
+total 28
+drwxr-x--- 4 ubuntu ubuntu 4096 Dec 22 04:56 .
+drwxr-xr-x 3 root   root   4096 Dec 22 04:49 ..
+-rw-r--r-- 1 ubuntu ubuntu  220 Mar 31  2024 .bash_logout
+-rw-r--r-- 1 ubuntu ubuntu 3771 Mar 31  2024 .bashrc
+drwx------ 2 ubuntu ubuntu 4096 Dec 22 04:56 .cache
+-rw-r--r-- 1 ubuntu ubuntu  807 Mar 31  2024 .profile
+drwx------ 2 ubuntu ubuntu 4096 Dec 22 04:49 .ssh
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$ git --version
+git version 2.43.0
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$ sudo hostname DOCKERSERVER
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$ exec bash
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$ docker --version
+Command 'docker' not found, but can be installed with:
+sudo snap install docker         # version 28.4.0, or
+sudo apt  install docker.io      # version 28.2.2-0ubuntu1~24.04.1
+sudo apt  install podman-docker  # version 4.9.3+ds1-1ubuntu0.2
+See 'snap info docker' for additional versions.
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$ curl -fssl https://get.docker.com -o install-docker.sh
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$ sudo sh install-docker.sh
+# Executing docker install script, commit: 8b33a64d28ec86a1121623f1d349801b48f2837b
++ sh -c apt-get -qq update >/dev/null
+
+
++ sh -c DEBIAN_FRONTEND=noninteractive apt-get -y -qq install ca-certificates curl >/dev/null
++ sh -c install -m 0755 -d /etc/apt/keyrings
++ sh -c curl -fsSL "https://download.docker.com/linux/ubuntu/gpg" -o /etc/apt/keyrings/docker.asc
++ sh -c chmod a+r /etc/apt/keyrings/docker.asc
++ sh -c echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu noble stable" > /etc/apt/sources.list.d/docker.list
++ sh -c apt-get -qq update >/dev/null
++ sh -c DEBIAN_FRONTEND=noninteractive apt-get -y -qq install docker-ce docker-ce-cli containerd.io docker-compose-plugin docker-ce-rootless-extras docker-buildx-plugin docker-model-plugin >/dev/null
+Scanning processes...
+Scanning linux images...
+Using systemd to manage Docker service
++ sh -c systemctl enable --now docker.service
+  UNIT            LOAD   ACTIVE     SUB       JOB   DESCRIPTION
+  proc-sys-fs-bi… loaded active     running         Arbitrary Exec…
+  sys-devices-pc… loaded active     plugged         Amazon Elastic…
+  sys-devices-pc… loaded active     plugged         Amazon Elastic…
+  sys-devices-pc… loaded active     plugged         Amazon Elastic…
+  sys-devices-pc… loaded active     plugged         Amazon Elastic…
+  sys-devices-pc… loaded active     plugged         Amazon Elastic…
+  sys-devices-pc… loaded active     plugged         Elastic Networ…
+  sys-devices-pl… loaded active     plugged         /sys/devices/p…
+  sys-devices-pl… loaded active     plugged         /sys/devices/p…
+  sys-devices-pl… loaded active     plugged         /sys/devices/p…
+  sys-devices-pn… loaded active     plugged         /sys/devices/p…
+  sys-devices-vi… loaded active     plugged         /sys/devices/v…
+  sys-devices-vi… loaded active     plugged         /sys/devices/v…
+  sys-devices-vi… loaded active     plugged         /sys/devices/v…
+  sys-devices-vi… loaded active     plugged         /sys/devices/v…
+  sys-devices-vi… loaded active     plugged         /sys/devices/v…
+  sys-devices-vi… loaded active     plugged         /sys/devices/v…
+  sys-module-con… loaded active     plugged         /sys/module/co…
+  sys-module-fus… loaded active     plugged         /sys/module/fu…
+  sys-subsystem-… loaded active     plugged         /sys/subsystem…
+  sys-subsystem-… loaded active     plugged         Elastic Networ…
+  -.mount         loaded active     mounted         Root Mount
+  boot-efi.mount  loaded active     mounted         /boot/efi
+  boot.mount      loaded active     mounted         /boot
+  dev-hugepages.… loaded active     mounted         Huge Pages Fil…
+  dev-mqueue.mou… loaded active     mounted         POSIX Message …
+  proc-sys-fs-bi… loaded active     mounted         Arbitrary Exec…
+  run-user-1000.… loaded active     mounted         /run/user/1000
+  snap-amazon\x2… loaded active     mounted         Mount unit for…
+  snap-core22-21… loaded active     mounted         Mount unit for…
+  snap-snapd-252… loaded active     mounted         Mount unit for…
+  sys-fs-fuse-co… loaded active     mounted         FUSE Control F…
+  sys-kernel-con… loaded active     mounted         Kernel Configu…
+  sys-kernel-deb… loaded active     mounted         Kernel Debug F…
+  sys-kernel-tra… loaded active     mounted         Kernel Trace F…
+  acpid.path      loaded active     running         ACPI Events Ch…
+  systemd-ask-pa… loaded active     waiting         Dispatch Passw…
+  systemd-ask-pa… loaded active     waiting         Forward Passwo…
+  init.scope      loaded active     running         System and Ser…
+  session-2.scope loaded active     running         Session 2 of U…
+  acpid.service   loaded active     running         ACPI event dae…
+  apparmor.servi… loaded active     exited          Load AppArmor …
+  apport.service  loaded active     exited          automatic cras…
+  apt-news.servi… loaded activating start     start Update APT News
+  blk-availabili… loaded active     exited          Availability o…
+  chrony.service  loaded active     running         chrony, an NTP…
+  cloud-config.s… loaded active     exited          Cloud-init: Co…
+  cloud-final.se… loaded active     exited          Cloud-init: Fi…
+  cloud-init-loc… loaded active     exited          Cloud-init: Lo…
+  cloud-init.ser… loaded active     exited          Cloud-init: Ne…
+  console-setup.… loaded active     exited          Set console fo…
+  containerd.ser… loaded active     running         containerd con…
+  cron.service    loaded active     running         Regular backgr…
+  dbus.service    loaded active     running         D-Bus System M…
+  docker.service  loaded active     running         Docker Applica…
+  finalrd.service loaded active     exited          Create final r…
+  getty@tty1.ser… loaded active     running         Getty on tty1
+  irqbalance.ser… loaded active     running         irqbalance dae…
+  keyboard-setup… loaded active     exited          Set the consol…
+  kmod-static-no… loaded active     exited          Create List of…
+  ldconfig.servi… loaded active     exited          Rebuild Dynami…
+  lvm2-monitor.s… loaded active     exited          Monitoring of …
+  ModemManager.s… loaded active     running         Modem Manager
+  multipathd.ser… loaded active     running         Device-Mapper …
+  networkd-dispa… loaded active     running         Dispatcher dae…
+  packagekit.ser… loaded active     running         PackageKit Dae…
+  plymouth-quit-… loaded active     exited          Hold until boo…
+  plymouth-quit.… loaded active     exited          Terminate Plym…
+  plymouth-read-… loaded active     exited          Tell Plymouth …
+  polkit.service  loaded active     running         Authorization …
+  rsyslog.service loaded active     running         System Logging…
+  serial-getty@t… loaded active     running         Serial Getty o…
+  setvtrgb.servi… loaded active     exited          Set console sc…
+  snap.amazon-ss… loaded active     running         Service for sn…
+  snapd.apparmor… loaded active     exited          Load AppArmor …
+  snapd.seeded.s… loaded active     exited          Wait until sna…
+  snapd.service   loaded active     running         Snap Daemon
+  ssh.service     loaded active     running         OpenBSD Secure…
+  sysstat.service loaded active     exited          Resets System …
+  systemd-binfmt… loaded active     exited          Set Up Additio…
+  systemd-fsck-r… loaded active     exited          File System Ch…
+  systemd-fsck@d… loaded active     exited          File System Ch…
+  systemd-fsck@d… loaded active     exited          File System Ch…
+  systemd-journa… loaded active     exited          Rebuild Journa…
+  systemd-journa… loaded active     exited          Flush Journal …
+  systemd-journa… loaded active     running         Journal Service
+  systemd-logind… loaded active     running         User Login Man…
+  systemd-machin… loaded active     exited          Commit a trans…
+  systemd-module… loaded active     exited          Load Kernel Mo…
+  systemd-networ… loaded active     exited          Wait for Netwo…
+  systemd-networ… loaded active     running         Network Config…
+  systemd-random… loaded active     exited          Load/Save OS R…
+  systemd-remoun… loaded active     exited          Remount Root a…
+  systemd-resolv… loaded active     running         Network Name R…
+  systemd-sysctl… loaded active     exited          Apply Kernel V…
+  systemd-sysuse… loaded active     exited          Create System …
+  systemd-tmpfil… loaded active     exited          Create Static …
+  systemd-tmpfil… loaded active     exited          Create Static …
+  systemd-tmpfil… loaded active     exited          Create Volatil…
+  systemd-udev-t… loaded active     exited          Coldplug All u…
+  systemd-udevd.… loaded active     running         Rule-based Man…
+  systemd-update… loaded active     exited          Update is Comp…
+  systemd-update… loaded active     exited          Record System …
+  systemd-user-s… loaded active     exited          Permit User Se…
+  udisks2.service loaded active     running         Disk Manager
+  ufw.service     loaded active     exited          Uncomplicated …
+  unattended-upg… loaded active     running         Unattended Upg…
+  user-runtime-d… loaded active     exited          User Runtime D…
+  user@1000.serv… loaded active     running         User Manager f…
+  -.slice         loaded active     active          Root Slice
+  system-getty.s… loaded active     active          Slice /system/…
+  system-modprob… loaded active     active          Slice /system/…
+  system-serial\… loaded active     active          Slice /system/…
+  system-systemd… loaded active     active          Slice /system/…
+  system.slice    loaded active     active          System Slice
+  user-1000.slice loaded active     active          User Slice of …
+  user.slice      loaded active     active          User and Sessi…
+  acpid.socket    loaded active     running         ACPID Listen S…
+  cloud-init-hot… loaded active     listening       cloud-init hot…
+  dbus.socket     loaded active     running         D-Bus System M…
+  dm-event.socket loaded active     listening       Device-mapper …
+  docker.socket   loaded active     running         Docker Socket …
+  iscsid.socket   loaded active     listening       Open-iSCSI isc…
+  lvm2-lvmpolld.… loaded active     listening       LVM2 poll daem…
+  lxd-installer.… loaded active     listening       Helper to inst…
+  multipathd.soc… loaded active     running         multipathd con…
+  snapd.socket    loaded active     running         Socket activat…
+  ssh.socket      loaded active     running         OpenBSD Secure…
+  syslog.socket   loaded active     running         Syslog Socket
+  systemd-fsckd.… loaded active     listening       fsck to fsckd …
+  systemd-initct… loaded active     listening       initctl Compat…
+  systemd-journa… loaded active     running         Journal Socket…
+  systemd-journa… loaded active     running         Journal Socket
+  systemd-networ… loaded active     running         Network Servic…
+  systemd-rfkill… loaded active     listening       Load/Save RF K…
+  systemd-sysext… loaded active     listening       System Extensi…
+  systemd-udevd-… loaded active     running         udev Control S…
+  systemd-udevd-… loaded active     running         udev Kernel So…
+  uuidd.socket    loaded active     listening       UUID daemon ac…
+  basic.target    loaded active     active          Basic System
+  cloud-config.t… loaded active     active          Cloud-config a…
+  cloud-init.tar… loaded active     active          Cloud-init tar…
+  cryptsetup.tar… loaded active     active          Local Encrypte…
+  getty-pre.targ… loaded active     active          Preparation fo…
+  getty.target    loaded active     active          Login Prompts
+  graphical.targ… loaded active     active          Graphical Inte…
+  integritysetup… loaded active     active          Local Integrit…
+  local-fs-pre.t… loaded active     active          Preparation fo…
+  local-fs.target loaded active     active          Local File Sys…
+  multi-user.tar… loaded active     active          Multi-User Sys…
+  network-online… loaded active     active          Network is Onl…
+  network-pre.ta… loaded active     active          Preparation fo…
+  network.target  loaded active     active          Network
+  nss-lookup.tar… loaded active     active          Host and Netwo…
+  paths.target    loaded active     active          Path Units
+  remote-fs-pre.… loaded active     active          Preparation fo…
+  remote-fs.targ… loaded active     active          Remote File Sy…
+  slices.target   loaded active     active          Slice Units
+  snapd.mounts-p… loaded active     active          Mounting snaps
+  snapd.mounts.t… loaded active     active          Mounted snaps
+  sockets.target  loaded active     active          Socket Units
+  swap.target     loaded active     active          Swaps
+  sysinit.target  loaded active     active          System Initial…
+  time-set.target loaded active     active          System Time Set
+  time-sync.targ… loaded active     active          System Time Sy…
+  timers.target   loaded active     active          Timer Units
+  veritysetup.ta… loaded active     active          Local Verity P…
+  apt-daily-upgr… loaded active     waiting         Daily apt upgr…
+  apt-daily.timer loaded active     waiting         Daily apt down…
+  dpkg-db-backup… loaded active     waiting         Daily dpkg dat…
+  e2scrub_all.ti… loaded active     waiting         Periodic ext4 …
+  fstrim.timer    loaded active     waiting         Discard unused…
+  fwupd-refresh.… loaded active     waiting         Refresh fwupd …
+  logrotate.timer loaded active     waiting         Daily rotation…
+  man-db.timer    loaded active     waiting         Daily man-db r…
+  motd-news.timer loaded active     waiting         Message of the…
+  sysstat-collec… loaded active     waiting         Run system act…
+  sysstat-summar… loaded active     waiting         Generate summa…
+  systemd-tmpfil… loaded active     waiting         Daily Cleanup …
+  update-notifie… loaded active     waiting         Download data …
+  update-notifie… loaded active     waiting         Check to see w…
+
+Legend: LOAD   → Reflects whether the unit definition was properly loaded.
+        ACTIVE → The high-level unit activation state, i.e. generalization of SUB.
+        SUB    → The low-level unit activation state, values depend on unit type.
+        JOB    → Pending job for the unit.
+
+181 loaded units listed. Pass --all to see loaded but inactive units, too.
+To show all installed unit files use 'systemctl list-unit-files'.
+INFO: Docker daemon enabled and started
+
++ sh -c docker version
+Client: Docker Engine - Community
+ Version:           29.1.3
+ API version:       1.52
+ Go version:        go1.25.5
+ Git commit:        f52814d
+ Built:             Fri Dec 12 14:49:32 2025
+ OS/Arch:           linux/amd64
+ Context:           default
+
+Server: Docker Engine - Community
+ Engine:
+  Version:          29.1.3
+  API version:      1.52 (minimum version 1.44)
+  Go version:       go1.25.5
+  Git commit:       fbf3ed2
+  Built:            Fri Dec 12 14:49:32 2025
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          v2.2.1
+  GitCommit:        dea7da592f5d1d2b7755e3a161be07f43fad8f75
+ runc:
+  Version:          1.3.4
+  GitCommit:        v1.3.4-0-gd6d73eb8
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
+
+================================================================================
+
+To run Docker as a non-privileged user, consider setting up the
+Docker daemon in rootless mode for your user:
+
+    dockerd-rootless-setuptool.sh install
+
+Visit https://docs.docker.com/go/rootless/ to learn about rootless mode.
+
+
+To run the Docker daemon as a fully privileged service, but granting non-root
+users access, refer to https://docs.docker.com/go/daemon-access/
+
+WARNING: Access to the remote API on a privileged Docker daemon is equivalent
+         to root access on the host. Refer to the 'Docker daemon attack surface'
+         documentation for details: https://docs.docker.com/go/attack-surface/
+
+================================================================================
+
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$ docker --version
+Docker version 29.1.3, build f52814d
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$ docker info
+Client: Docker Engine - Community
+ Version:    29.1.3
+ Context:    default
+ Debug Mode: false
+ Plugins:
+  buildx: Docker Buildx (Docker Inc.)
+    Version:  v0.30.1
+    Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+  compose: Docker Compose (Docker Inc.)
+    Version:  v5.0.0
+    Path:     /usr/libexec/docker/cli-plugins/docker-compose
+  model: Docker Model Runner (Docker Inc.)
+    Version:  v1.0.6
+    Path:     /usr/libexec/docker/cli-plugins/docker-model
+
+Server:
+permission denied while trying to connect to the docker API at unix:///var/run/docker.sock
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$ sudo usermod -aG docker ubuntu
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$ exit
+exit
+Connection to ec2-51-21-193-185.eu-north-1.compute.amazonaws.com closed.
+
+syamp@Syam MINGW64 /c/Syam/DevOps/DOCKER
+$ ssh -i "SPR.pem" ubuntu@ec2-51-21-193-185.eu-north-1.compute.amazonaws.com
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.14.0-1015-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Mon Dec 22 05:05:34 UTC 2025
+
+  System load:  0.17              Temperature:           -273.1 C
+  Usage of /:   36.5% of 6.71GB   Processes:             120
+  Memory usage: 28%               Users logged in:       0
+  Swap usage:   0%                IPv4 address for ens5: 172.31.41.19
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+74 updates can be applied immediately.
+28 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Mon Dec 22 04:56:21 2025 from 157.49.237.211
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$ docker --version
+Docker version 29.1.3, build f52814d
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$ docker info
+Client: Docker Engine - Community
+ Version:    29.1.3
+ Context:    default
+ Debug Mode: false
+ Plugins:
+  buildx: Docker Buildx (Docker Inc.)
+    Version:  v0.30.1
+    Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+  compose: Docker Compose (Docker Inc.)
+    Version:  v5.0.0
+    Path:     /usr/libexec/docker/cli-plugins/docker-compose
+  model: Docker Model Runner (Docker Inc.)
+    Version:  v1.0.6
+    Path:     /usr/libexec/docker/cli-plugins/docker-model
+
+Server:
+ Containers: 0
+  Running: 0
+  Paused: 0
+  Stopped: 0
+ Images: 0
+ Server Version: 29.1.3
+ Storage Driver: overlayfs
+  driver-type: io.containerd.snapshotter.v1
+ Logging Driver: json-file
+ Cgroup Driver: systemd
+ Cgroup Version: 2
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+ CDI spec directories:
+  /etc/cdi
+  /var/run/cdi
+ Swarm: inactive
+ Runtimes: runc io.containerd.runc.v2
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version: dea7da592f5d1d2b7755e3a161be07f43fad8f75
+ runc version: v1.3.4-0-gd6d73eb8
+ init version: de40ad0
+ Security Options:
+  apparmor
+  seccomp
+   Profile: builtin
+  cgroupns
+ Kernel Version: 6.14.0-1015-aws
+ Operating System: Ubuntu 24.04.3 LTS
+ OSType: linux
+ Architecture: x86_64
+ CPUs: 2
+ Total Memory: 914.2MiB
+ Name: DOCKERSERVER
+ ID: afc0f47c-7869-4bb7-8ed3-647b51cbbf6b
+ Docker Root Dir: /var/lib/docker
+ Debug Mode: false
+ Experimental: false
+ Insecure Registries:
+  ::1/128
+  127.0.0.0/8
+ Live Restore Enabled: false
+ Firewall Backend: iptables
+
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$ docker image ls
+                                               i Info →   U  In Use
+IMAGE   ID             DISK USAGE   CONTENT SIZE   EXTRA
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$ docker container
+Usage:  docker container COMMAND
+
+Manage containers
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  exec        Execute a command in a running container
+  export      Export a container's filesystem as a tar archive
+  inspect     Display detailed information on one or more containers
+  kill        Kill one or more running containers
+  logs        Fetch the logs of a container
+  ls          List containers
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  prune       Remove all stopped containers
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  run         Create and run a new container from an image
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  wait        Block until one or more containers stop, then print their exit codes
+
+Run 'docker container COMMAND --help' for more information on a command.
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$ docker container ls
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$ docker volume ls
+DRIVER    VOLUME NAME
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+ubuntu@DOCKERSERVER:~$
+
