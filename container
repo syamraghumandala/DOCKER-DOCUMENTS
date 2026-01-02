@@ -1,0 +1,944 @@
+
+syamp@Syam MINGW64 /c/Syam/DevOps/DOCKER
+$ date
+Wed Dec 31 09:09:08 IST 2025
+
+syamp@Syam MINGW64 /c/Syam/DevOps/DOCKER
+$ pwd
+/c/Syam/DevOps/DOCKER
+
+syamp@Syam MINGW64 /c/Syam/DevOps/DOCKER
+$ ls -al
+total 8
+drwxr-xr-x 1 syamp 197609    0 Dec 22 11:01  ./
+drwxr-xr-x 1 syamp 197609    0 Dec 22 10:21  ../
+drwxr-xr-x 1 syamp 197609    0 Dec 22 10:44 'DOCKER PDF DOCUMENTS'/
+drwxr-xr-x 1 syamp 197609    0 Dec 23 11:09  DOCKER-DOCUMENTS/
+-rw-r--r-- 1 syamp 197609 1678 Dec 22 10:18  SPR.pem
+
+syamp@Syam MINGW64 /c/Syam/DevOps/DOCKER
+$ ssh -i "SPR.pem" ubuntu@ec2-51-21-195-102.eu-north-1.compute.amazonaws.com
+The authenticity of host 'ec2-51-21-195-102.eu-north-1.compute.amazonaws.com (51.21.195.102)' can't be established.
+ED25519 key fingerprint is: SHA256:UApNtQRtaPPZ3SwJRdTm9uEVx0t5o3P8zq8WQ3sScgU
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:6: ec2-51-21-193-185.eu-north-1.compute.amazonaws.com
+    ~/.ssh/known_hosts:9: ec2-13-51-198-210.eu-north-1.compute.amazonaws.com
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'ec2-51-21-195-102.eu-north-1.compute.amazonaws.com' (ED25519) to the list of known hosts.
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.14.0-1018-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Wed Dec 31 03:39:40 UTC 2025
+
+  System load:  0.01              Temperature:           -273.1 C
+  Usage of /:   44.3% of 6.71GB   Processes:             117
+  Memory usage: 28%               Users logged in:       0
+  Swap usage:   0%                IPv4 address for ens5: 172.31.41.19
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+46 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+Last login: Tue Dec 23 05:02:02 2025 from 157.49.237.112
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$ date
+Wed Dec 31 03:39:50 UTC 2025
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$ pwd
+/home/ubuntu
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$ ls -al
+total 72
+drwxr-x--- 7 ubuntu ubuntu  4096 Dec 23 05:21 .
+drwxr-xr-x 3 root   root    4096 Dec 22 04:49 ..
+-rw------- 1 ubuntu ubuntu  1110 Dec 23 05:41 .bash_history
+-rw-r--r-- 1 ubuntu ubuntu   220 Mar 31  2024 .bash_logout
+-rw-r--r-- 1 ubuntu ubuntu  3771 Mar 31  2024 .bashrc
+drwx------ 2 ubuntu ubuntu  4096 Dec 22 04:56 .cache
+drwx------ 3 ubuntu ubuntu  4096 Dec 23 05:10 .docker
+-rw-r--r-- 1 ubuntu ubuntu   807 Mar 31  2024 .profile
+drwx------ 2 ubuntu ubuntu  4096 Dec 22 04:49 .ssh
+-rw-r--r-- 1 ubuntu ubuntu     0 Dec 22 04:58 .sudo_as_admin_successful
+-rw------- 1 ubuntu ubuntu  1400 Dec 23 05:21 .viminfo
+drwxrwxr-x 2 ubuntu ubuntu  4096 Dec 23 05:08 FIRSTDOCKER
+drwxrwxr-x 2 ubuntu ubuntu  4096 Dec 23 05:21 NGINXDOCKER
+-rw-rw-r-- 1 ubuntu ubuntu 22396 Dec 22 05:03 install-docker.sh
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$ cd FIRSTDOCKER/
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ pwd
+/home/ubuntu/FIRSTDOCKER
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ ls -al
+total 12
+drwxrwxr-x 2 ubuntu ubuntu 4096 Dec 23 05:08 .
+drwxr-x--- 7 ubuntu ubuntu 4096 Dec 23 05:21 ..
+-rw-rw-r-- 1 ubuntu ubuntu   85 Dec 23 05:08 Dockerfile
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker image ls
+                                                                  i Info →   U  In Use
+IMAGE                  ID             DISK USAGE   CONTENT SIZE   EXTRA
+ing:latest             ea0701b69930        225MB         72.1MB
+nginximg:latest        ea0701b69930        225MB         72.1MB
+satyanarayana:latest   88be329b3ab7        215MB         69.6MB
+syamimage:latest       990fb45915e1        215MB         69.6MB
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker container ls
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker volume ls
+DRIVER    VOLUME NAME
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ Read from remote host ec2-51-21-195-102.eu-north-1.compute.amazonaws.com: Connection reset by peer
+Connection to ec2-51-21-195-102.eu-north-1.compute.amazonaws.com closed.
+client_loop: send disconnect: Connection reset by peer
+
+syamp@Syam MINGW64 /c/Syam/DevOps/DOCKER
+$ ssh -i "SPR.pem" ubuntu@ec2-51-21-195-102.eu-north-1.compute.amazonaws.com
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.14.0-1018-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Wed Dec 31 03:44:44 UTC 2025
+
+  System load:  0.0               Temperature:           -273.1 C
+  Usage of /:   44.3% of 6.71GB   Processes:             115
+  Memory usage: 28%               Users logged in:       1
+  Swap usage:   0%                IPv4 address for ens5: 172.31.41.19
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+46 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+Last login: Wed Dec 31 03:39:41 2025 from 103.159.192.79
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$ docker image ls
+                                                                  i Info →   U  In Use
+IMAGE                  ID             DISK USAGE   CONTENT SIZE   EXTRA
+ing:latest             ea0701b69930        225MB         72.1MB
+nginximg:latest        ea0701b69930        225MB         72.1MB
+satyanarayana:latest   88be329b3ab7        215MB         69.6MB
+syamimage:latest       990fb45915e1        215MB         69.6MB
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$ pwd
+/home/ubuntu
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$ ls -al
+total 72
+drwxr-x--- 7 ubuntu ubuntu  4096 Dec 23 05:21 .
+drwxr-xr-x 3 root   root    4096 Dec 22 04:49 ..
+-rw------- 1 ubuntu ubuntu  1110 Dec 23 05:41 .bash_history
+-rw-r--r-- 1 ubuntu ubuntu   220 Mar 31  2024 .bash_logout
+-rw-r--r-- 1 ubuntu ubuntu  3771 Mar 31  2024 .bashrc
+drwx------ 2 ubuntu ubuntu  4096 Dec 22 04:56 .cache
+drwx------ 3 ubuntu ubuntu  4096 Dec 23 05:10 .docker
+-rw-r--r-- 1 ubuntu ubuntu   807 Mar 31  2024 .profile
+drwx------ 2 ubuntu ubuntu  4096 Dec 22 04:49 .ssh
+-rw-r--r-- 1 ubuntu ubuntu     0 Dec 22 04:58 .sudo_as_admin_successful
+-rw------- 1 ubuntu ubuntu  1400 Dec 23 05:21 .viminfo
+drwxrwxr-x 2 ubuntu ubuntu  4096 Dec 23 05:08 FIRSTDOCKER
+drwxrwxr-x 2 ubuntu ubuntu  4096 Dec 23 05:21 NGINXDOCKER
+-rw-rw-r-- 1 ubuntu ubuntu 22396 Dec 22 05:03 install-docker.sh
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$ cd FIRSTDOCKER/
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ pwd
+/home/ubuntu/FIRSTDOCKER
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ ls -al
+total 12
+drwxrwxr-x 2 ubuntu ubuntu 4096 Dec 23 05:08 .
+drwxr-x--- 7 ubuntu ubuntu 4096 Dec 23 05:21 ..
+-rw-rw-r-- 1 ubuntu ubuntu   85 Dec 23 05:08 Dockerfile
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ cat Dockerfile
+FROM ubuntu
+RUN apt-get update
+CMD ["echo", "Hello, This is my First Docker file"]
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker image ls
+                                                                  i Info →   U  In Use
+IMAGE                  ID             DISK USAGE   CONTENT SIZE   EXTRA
+ing:latest             ea0701b69930        225MB         72.1MB
+nginximg:latest        ea0701b69930        225MB         72.1MB
+satyanarayana:latest   88be329b3ab7        215MB         69.6MB
+syamimage:latest       990fb45915e1        215MB         69.6MB
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker image build -t prasad .
+[+] Building 1.2s (6/6) FINISHED                                       docker:default
+ => [internal] load build definition from Dockerfile                             0.0s
+ => => transferring dockerfile: 122B                                             0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                 0.9s
+ => [internal] load .dockerignore                                                0.0s
+ => => transferring context: 2B                                                  0.0s
+ => [1/2] FROM docker.io/library/ubuntu:latest@sha256:c35e29c9450151419d9448b0f  0.0s
+ => => resolve docker.io/library/ubuntu:latest@sha256:c35e29c9450151419d9448b0f  0.0s
+ => CACHED [2/2] RUN apt-get update                                              0.0s
+ => exporting to image                                                           0.1s
+ => => exporting layers                                                          0.0s
+ => => exporting manifest sha256:8a719d78d78bcf43c0cdbb878827caa0b102424c84204c  0.0s
+ => => exporting config sha256:09fc28cec11a9e8315aa7e8f23cc5fb768c1460b449d0182  0.0s
+ => => exporting attestation manifest sha256:b4e0811e76f92a08827cdd71f556e68468  0.0s
+ => => exporting manifest list sha256:bb4bbf944b9e2982704a1f82064c045b8ecc7741c  0.0s
+ => => naming to docker.io/library/prasad:latest                                 0.0s
+ => => unpacking to docker.io/library/prasad:latest                              0.0s
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker image ls
+                                                                  i Info →   U  In Use
+IMAGE                  ID             DISK USAGE   CONTENT SIZE   EXTRA
+ing:latest             ea0701b69930        225MB         72.1MB
+nginximg:latest        ea0701b69930        225MB         72.1MB
+prasad:latest          bb4bbf944b9e        215MB         69.6MB
+satyanarayana:latest   88be329b3ab7        215MB         69.6MB
+syamimage:latest       990fb45915e1        215MB         69.6MB
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker image --l
+unknown flag: --l
+
+Usage:  docker image
+
+Run 'docker image --help' for more information
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker image --help
+Usage:  docker image COMMAND
+
+Manage images
+
+Commands:
+  build       Build an image from a Dockerfile
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  inspect     Display detailed information on one or more images
+  load        Load an image from a tar archive or STDIN
+  ls          List images
+  prune       Remove unused images
+  pull        Download an image from a registry
+  push        Upload an image to a registry
+  rm          Remove one or more images
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+
+Run 'docker image COMMAND --help' for more information on a command.
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker image inspect prasad:latest
+[
+    {
+        "Id": "sha256:bb4bbf944b9e2982704a1f82064c045b8ecc7741c73536c37eb52116c0daca6a",
+        "RepoTags": [
+            "prasad:latest"
+        ],
+        "RepoDigests": [
+            "prasad@sha256:bb4bbf944b9e2982704a1f82064c045b8ecc7741c73536c37eb52116c0daca6a"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2025-12-23T05:11:06.929885015Z",
+        "Config": {
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+            ],
+            "Cmd": [
+                "echo",
+                "Hello, This is my First Docker file"
+            ],
+            "Labels": {
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.version": "24.04"
+            },
+            "ArgsEscaped": true
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 69636117,
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:e8bce0aabd687e9ee90e0bada33884f40b277196f72aac9934357472863a80ae",
+                "sha256:541405a68a2a2a0eae0941deee97a468bb7259e9002ab15bdbacd141f2c7b154"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2025-12-31T03:47:08.968067294Z"
+        },
+        "Descriptor": {
+            "mediaType": "application/vnd.oci.image.index.v1+json",
+            "digest": "sha256:bb4bbf944b9e2982704a1f82064c045b8ecc7741c73536c37eb52116c0daca6a",
+            "size": 855
+        }
+    }
+]
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker container run -it --name prasadcont
+docker: 'docker container run' requires at least 1 argument
+
+Usage:  docker container run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+See 'docker container run --help' for more information
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker container run -it --name prasadcont prasad /bin/sh
+#
+#
+#
+# pwd
+/
+# ls -al
+total 56
+drwxr-xr-x   1 root root 4096 Dec 31 03:52 .
+drwxr-xr-x   1 root root 4096 Dec 31 03:52 ..
+-rwxr-xr-x   1 root root    0 Dec 31 03:52 .dockerenv
+lrwxrwxrwx   1 root root    7 Apr 22  2024 bin -> usr/bin
+drwxr-xr-x   2 root root 4096 Apr 22  2024 boot
+drwxr-xr-x   5 root root  360 Dec 31 03:52 dev
+drwxr-xr-x   1 root root 4096 Dec 31 03:52 etc
+drwxr-xr-x   3 root root 4096 Oct 13 14:09 home
+lrwxrwxrwx   1 root root    7 Apr 22  2024 lib -> usr/lib
+lrwxrwxrwx   1 root root    9 Apr 22  2024 lib64 -> usr/lib64
+drwxr-xr-x   2 root root 4096 Oct 13 14:02 media
+drwxr-xr-x   2 root root 4096 Oct 13 14:02 mnt
+drwxr-xr-x   2 root root 4096 Oct 13 14:02 opt
+dr-xr-xr-x 179 root root    0 Dec 31 03:52 proc
+drwx------   2 root root 4096 Oct 13 14:09 root
+drwxr-xr-x   4 root root 4096 Oct 13 14:09 run
+lrwxrwxrwx   1 root root    8 Apr 22  2024 sbin -> usr/sbin
+drwxr-xr-x   2 root root 4096 Oct 13 14:02 srv
+dr-xr-xr-x  13 root root    0 Dec 31 03:52 sys
+drwxrwxrwt   2 root root 4096 Oct 13 14:09 tmp
+drwxr-xr-x  12 root root 4096 Oct 13 14:02 usr
+drwxr-xr-x   1 root root 4096 Oct 13 14:09 var
+#
+# pwd
+/
+# exit
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker container ls -a
+CONTAINER ID   IMAGE     COMMAND     CREATED              STATUS                      PORTS     NAMES
+a544303e7665   prasad    "/bin/sh"   About a minute ago   Exited (0) 18 seconds ago             prasadcont
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker container ls -a
+CONTAINER ID   IMAGE     COMMAND     CREATED              STATUS                      PORTS     NAMES
+a544303e7665   prasad    "/bin/sh"   About a minute ago   Exited (0) 49 seconds ago             prasadcont
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ Read from remote host ec2-51-21-195-102.eu-north-1.compute.amazonaws.com: Connection reset by peer
+Connection to ec2-51-21-195-102.eu-north-1.compute.amazonaws.com closed.
+client_loop: send disconnect: Connection reset by peer
+
+syamp@Syam MINGW64 /c/Syam/DevOps/DOCKER
+$ ssh -i "SPR.pem" ubuntu@ec2-51-21-195-102.eu-north-1.compute.amazonaws.com
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.14.0-1018-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Wed Dec 31 04:01:45 UTC 2025
+
+  System load:  0.0               Temperature:           -273.1 C
+  Usage of /:   44.3% of 6.71GB   Processes:             116
+  Memory usage: 31%               Users logged in:       1
+  Swap usage:   0%                IPv4 address for ens5: 172.31.41.19
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+46 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+Last login: Wed Dec 31 03:44:45 2025 from 103.159.192.79
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$ pwd
+/home/ubuntu
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$ ls -al
+total 72
+drwxr-x--- 7 ubuntu ubuntu  4096 Dec 23 05:21 .
+drwxr-xr-x 3 root   root    4096 Dec 22 04:49 ..
+-rw------- 1 ubuntu ubuntu  1110 Dec 23 05:41 .bash_history
+-rw-r--r-- 1 ubuntu ubuntu   220 Mar 31  2024 .bash_logout
+-rw-r--r-- 1 ubuntu ubuntu  3771 Mar 31  2024 .bashrc
+drwx------ 2 ubuntu ubuntu  4096 Dec 22 04:56 .cache
+drwx------ 3 ubuntu ubuntu  4096 Dec 23 05:10 .docker
+-rw-r--r-- 1 ubuntu ubuntu   807 Mar 31  2024 .profile
+drwx------ 2 ubuntu ubuntu  4096 Dec 22 04:49 .ssh
+-rw-r--r-- 1 ubuntu ubuntu     0 Dec 22 04:58 .sudo_as_admin_successful
+-rw------- 1 ubuntu ubuntu  1400 Dec 23 05:21 .viminfo
+drwxrwxr-x 2 ubuntu ubuntu  4096 Dec 23 05:08 FIRSTDOCKER
+drwxrwxr-x 2 ubuntu ubuntu  4096 Dec 23 05:21 NGINXDOCKER
+-rw-rw-r-- 1 ubuntu ubuntu 22396 Dec 22 05:03 install-docker.sh
+ubuntu@ip-172-31-41-19:~$ c
+c: command not found
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$ cd FIRSTDOCKER/
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ pwd
+/home/ubuntu/FIRSTDOCKER
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker image ls
+                                                                                                  i Info →   U  In Use
+IMAGE                  ID             DISK USAGE   CONTENT SIZE   EXTRA
+ing:latest             ea0701b69930        225MB         72.1MB
+nginximg:latest        ea0701b69930        225MB         72.1MB
+prasad:latest          bb4bbf944b9e        215MB         69.6MB    U
+satyanarayana:latest   88be329b3ab7        215MB         69.6MB    U
+syamimage:latest       990fb45915e1        215MB         69.6MB    U
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker container ls -al
+CONTAINER ID   IMAGE     COMMAND     CREATED          STATUS                      PORTS     NAMES
+a544303e7665   prasad    "/bin/sh"   10 minutes ago   Exited (0) 10 minutes ago             prasadcont
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker commit prasadcont xyzimage
+
+sha256:e6602bee5293d3a8a64f041abdc22dd79914bd00d64436354a1fc22920651922
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker image ls
+                                                                                                  i Info →   U  In Use
+IMAGE                  ID             DISK USAGE   CONTENT SIZE   EXTRA
+ing:latest             ea0701b69930        225MB         72.1MB
+nginximg:latest        ea0701b69930        225MB         72.1MB
+prasad:latest          bb4bbf944b9e        215MB         69.6MB    U
+satyanarayana:latest   88be329b3ab7        215MB         69.6MB    U
+syamimage:latest       990fb45915e1        215MB         69.6MB    U
+xyzimage:latest        e6602bee5293        215MB         69.6MB
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ top
+top - 04:09:45 up 31 min,  3 users,  load average: 0.00, 0.00, 0.00
+Tasks: 114 total,   1 running, 113 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.2 sy,  0.0 ni, 99.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :    914.2 total,     68.1 free,    400.6 used,    606.7 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.    513.7 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+      1 root      20   0   22184  13544   9652 S   0.0   1.4   0:01.27 systemd
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kthreadd
+      3 root      20   0       0      0      0 S   0.0   0.0   0:00.00 pool_workqueue_release
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-rcu_gp
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-sync_wq
+      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-kvfree_rcu_reclaim
+      7 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-slub_flushwq
+      8 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-netns
+     11 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/0:0H-events_highpri
+     13 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-mm_percpu_wq
+     14 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_rude_kthread
+     15 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_trace_kthread
+     16 root      20   0       0      0      0 S   0.0   0.0   0:00.02 ksoftirqd/0
+     17 root      20   0       0      0      0 I   0.0   0.0   0:00.10 rcu_sched
+     18 root      20   0       0      0      0 S   0.0   0.0   0:00.00 rcu_exp_par_gp_kthread_worker/0
+     19 root      20   0       0      0      0 S   0.0   0.0   0:00.00 rcu_exp_gp_kthread_worker
+     20 root      rt   0       0      0      0 S   0.0   0.0   0:00.00 migration/0
+     21 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/0
+     22 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/0
+     23 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/1
+     24 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/1
+     25 root      rt   0       0      0      0 S   0.0   0.0   0:00.06 migration/1
+     26 root      20   0       0      0      0 S   0.0   0.0   0:00.02 ksoftirqd/1
+     28 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/1:0H-events_highpri
+     29 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kdevtmpfs
+     30 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-inet_frag_wq
+     31 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kauditd
+[1]+  Stopped                 top
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker image ls
+                                                                                                  i Info →   U  In Use
+IMAGE                  ID             DISK USAGE   CONTENT SIZE   EXTRA
+ing:latest             ea0701b69930        225MB         72.1MB
+nginximg:latest        ea0701b69930        225MB         72.1MB
+prasad:latest          bb4bbf944b9e        215MB         69.6MB    U
+satyanarayana:latest   88be329b3ab7        215MB         69.6MB    U
+syamimage:latest       990fb45915e1        215MB         69.6MB    U
+xyzimage:latest        e6602bee5293        215MB         69.6MB
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker container ls -a
+CONTAINER ID   IMAGE     COMMAND     CREATED          STATUS                      PORTS     NAMES
+a544303e7665   prasad    "/bin/sh"   17 minutes ago   Exited (0) 17 minutes ago             prasadcont
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker image tag xyzimage:latest syamprasadraghumandala/xyzimage
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker image ls
+                                                                                                  i Info →   U  In Use
+IMAGE                                    ID             DISK USAGE   CONTENT SIZE   EXTRA
+ing:latest                               ea0701b69930        225MB         72.1MB
+nginximg:latest                          ea0701b69930        225MB         72.1MB
+prasad:latest                            bb4bbf944b9e        215MB         69.6MB    U
+satyanarayana:latest                     88be329b3ab7        215MB         69.6MB    U
+syamimage:latest                         990fb45915e1        215MB         69.6MB    U
+syamprasadraghumandala/xyzimage:latest   e6602bee5293        215MB         69.6MB
+xyzimage:latest                          e6602bee5293        215MB         69.6MB
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker login
+
+USING WEB-BASED LOGIN
+
+i Info → To sign in with credentials on the command line, use 'docker login -u <username>'
+
+
+Your one-time device confirmation code is: RRHN-VMFN
+Press ENTER to open your browser or submit your device code here: https://login.docker.com/activate
+
+Waiting for authentication in the browser…
+^Z
+[2]+  Stopped                 docker login
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker login -u syamprasadraghumandala
+
+i Info → A Personal Access Token (PAT) can be used instead.
+         To create a PAT, visit https://app.docker.com/settings
+
+
+Password:
+
+WARNING! Your credentials are stored unencrypted in '/home/ubuntu/.docker/config.json'.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/go/credential-store/
+
+Login Succeeded
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker image ls
+                                                                                                  i Info →   U  In Use
+IMAGE                                    ID             DISK USAGE   CONTENT SIZE   EXTRA
+ing:latest                               ea0701b69930        225MB         72.1MB
+nginximg:latest                          ea0701b69930        225MB         72.1MB
+prasad:latest                            bb4bbf944b9e        215MB         69.6MB    U
+satyanarayana:latest                     88be329b3ab7        215MB         69.6MB    U
+syamimage:latest                         990fb45915e1        215MB         69.6MB    U
+syamprasadraghumandala/xyzimage:latest   e6602bee5293        215MB         69.6MB
+xyzimage:latest                          e6602bee5293        215MB         69.6MB
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker push syamprasadraghumandala/xyzimage:latest
+The push refers to repository [docker.io/syamprasadraghumandala/xyzimage]
+5e5f60e414e6: Waiting
+20043066d3d5: Waiting
+push access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker push syamprasadraghumandala/xyzimage
+Using default tag: latest
+The push refers to repository [docker.io/syamprasadraghumandala/xyzimage]
+5e5f60e414e6: Waiting
+20043066d3d5: Waiting
+push access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ Read from remote host ec2-51-21-195-102.eu-north-1.compute.amazonaws.com: Connection reset by peer
+Connection to ec2-51-21-195-102.eu-north-1.compute.amazonaws.com closed.
+client_loop: send disconnect: Connection reset by peer
+
+syamp@Syam MINGW64 /c/Syam/DevOps/DOCKER
+$ ssh -i "SPR.pem" ubuntu@ec2-51-21-195-102.eu-north-1.compute.amazonaws.com
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.14.0-1018-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Wed Dec 31 04:21:55 UTC 2025
+
+  System load:  0.0               Temperature:           -273.1 C
+  Usage of /:   44.3% of 6.71GB   Processes:             126
+  Memory usage: 33%               Users logged in:       1
+  Swap usage:   0%                IPv4 address for ens5: 172.31.41.19
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+46 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+Last login: Wed Dec 31 04:01:46 2025 from 103.159.192.79
+ubuntu@ip-172-31-41-19:~$ pwd
+/home/ubuntu
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$ ls  -al
+total 76
+drwxr-x--- 8 ubuntu ubuntu  4096 Dec 31 04:05 .
+drwxr-xr-x 3 root   root    4096 Dec 22 04:49 ..
+-rw------- 1 ubuntu ubuntu  1110 Dec 23 05:41 .bash_history
+-rw-r--r-- 1 ubuntu ubuntu   220 Mar 31  2024 .bash_logout
+-rw-r--r-- 1 ubuntu ubuntu  3771 Mar 31  2024 .bashrc
+drwx------ 2 ubuntu ubuntu  4096 Dec 22 04:56 .cache
+drwx------ 3 ubuntu ubuntu  4096 Dec 31 04:05 .config
+drwx------ 3 ubuntu ubuntu  4096 Dec 31 04:14 .docker
+-rw-r--r-- 1 ubuntu ubuntu   807 Mar 31  2024 .profile
+drwx------ 2 ubuntu ubuntu  4096 Dec 22 04:49 .ssh
+-rw-r--r-- 1 ubuntu ubuntu     0 Dec 22 04:58 .sudo_as_admin_successful
+-rw------- 1 ubuntu ubuntu  1400 Dec 23 05:21 .viminfo
+drwxrwxr-x 2 ubuntu ubuntu  4096 Dec 23 05:08 FIRSTDOCKER
+drwxrwxr-x 2 ubuntu ubuntu  4096 Dec 23 05:21 NGINXDOCKER
+-rw-rw-r-- 1 ubuntu ubuntu 22396 Dec 22 05:03 install-docker.sh
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$ cd FIRSTDOCKER/
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ pwd
+/home/ubuntu/FIRSTDOCKER
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ ls -al
+total 12
+drwxrwxr-x 2 ubuntu ubuntu 4096 Dec 23 05:08 .
+drwxr-x--- 8 ubuntu ubuntu 4096 Dec 31 04:05 ..
+-rw-rw-r-- 1 ubuntu ubuntu   85 Dec 23 05:08 Dockerfile
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker image ls
+                                                                                                  i Info →   U  In Use
+IMAGE                                    ID             DISK USAGE   CONTENT SIZE   EXTRA
+ing:latest                               ea0701b69930        225MB         72.1MB
+nginximg:latest                          ea0701b69930        225MB         72.1MB
+prasad:latest                            bb4bbf944b9e        215MB         69.6MB    U
+satyanarayana:latest                     88be329b3ab7        215MB         69.6MB    U
+syamimage:latest                         990fb45915e1        215MB         69.6MB    U
+syamprasadraghumandala/xyzimage:latest   e6602bee5293        215MB         69.6MB
+xyzimage:latest                          e6602bee5293        215MB         69.6MB
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker logout
+Removing login credentials for https://index.docker.io/v1/
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker login -u syamprasadraghumandala
+
+i Info → A Personal Access Token (PAT) can be used instead.
+         To create a PAT, visit https://app.docker.com/settings
+
+
+Password:
+
+WARNING! Your credentials are stored unencrypted in '/home/ubuntu/.docker/config.json'.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/go/credential-store/
+
+Login Succeeded
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker push syamprasadraghumandala/xyzimage:latest
+The push refers to repository [docker.io/syamprasadraghumandala/xyzimage]
+20043066d3d5: Pushed
+5e5f60e414e6: Pushed
+latest: digest: sha256:e6602bee5293d3a8a64f041abdc22dd79914bd00d64436354a1fc22920651922 size: 751
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ Read from remote host ec2-51-21-195-102.eu-north-1.compute.amazonaws.com: Connection reset by peer
+Connection to ec2-51-21-195-102.eu-north-1.compute.amazonaws.com closed.
+client_loop: send disconnect: Connection reset by peer
+
+syamp@Syam MINGW64 /c/Syam/DevOps/DOCKER
+$ ssh -i "SPR.pem" ubuntu@ec2-51-21-195-102.eu-north-1.compute.amazonaws.com
+Welcome to Ubuntu 24.04.3 LTS (GNU/Linux 6.14.0-1018-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Wed Dec 31 04:30:49 UTC 2025
+
+  System load:  0.08              Temperature:           -273.1 C
+  Usage of /:   44.3% of 6.71GB   Processes:             126
+  Memory usage: 32%               Users logged in:       1
+  Swap usage:   0%                IPv4 address for ens5: 172.31.41.19
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+46 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+Last login: Wed Dec 31 04:21:57 2025 from 103.159.192.79
+ubuntu@ip-172-31-41-19:~$ pwd
+/home/ubuntu
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$ ls -al
+total 76
+drwxr-x--- 8 ubuntu ubuntu  4096 Dec 31 04:05 .
+drwxr-xr-x 3 root   root    4096 Dec 22 04:49 ..
+-rw------- 1 ubuntu ubuntu  1110 Dec 23 05:41 .bash_history
+-rw-r--r-- 1 ubuntu ubuntu   220 Mar 31  2024 .bash_logout
+-rw-r--r-- 1 ubuntu ubuntu  3771 Mar 31  2024 .bashrc
+drwx------ 2 ubuntu ubuntu  4096 Dec 22 04:56 .cache
+drwx------ 3 ubuntu ubuntu  4096 Dec 31 04:05 .config
+drwx------ 3 ubuntu ubuntu  4096 Dec 31 04:23 .docker
+-rw-r--r-- 1 ubuntu ubuntu   807 Mar 31  2024 .profile
+drwx------ 2 ubuntu ubuntu  4096 Dec 22 04:49 .ssh
+-rw-r--r-- 1 ubuntu ubuntu     0 Dec 22 04:58 .sudo_as_admin_successful
+-rw------- 1 ubuntu ubuntu  1400 Dec 23 05:21 .viminfo
+drwxrwxr-x 2 ubuntu ubuntu  4096 Dec 23 05:08 FIRSTDOCKER
+drwxrwxr-x 2 ubuntu ubuntu  4096 Dec 23 05:21 NGINXDOCKER
+-rw-rw-r-- 1 ubuntu ubuntu 22396 Dec 22 05:03 install-docker.sh
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$
+ubuntu@ip-172-31-41-19:~$ cd FIRSTDOCKER/
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ pwd
+/home/ubuntu/FIRSTDOCKER
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ ls -al
+total 12
+drwxrwxr-x 2 ubuntu ubuntu 4096 Dec 23 05:08 .
+drwxr-x--- 8 ubuntu ubuntu 4096 Dec 31 04:05 ..
+-rw-rw-r-- 1 ubuntu ubuntu   85 Dec 23 05:08 Dockerfile
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker image ls
+                                                                                                  i Info →   U  In Use
+IMAGE                                    ID             DISK USAGE   CONTENT SIZE   EXTRA
+ing:latest                               ea0701b69930        225MB         72.1MB
+nginximg:latest                          ea0701b69930        225MB         72.1MB
+prasad:latest                            bb4bbf944b9e        215MB         69.6MB    U
+satyanarayana:latest                     88be329b3ab7        215MB         69.6MB    U
+syamimage:latest                         990fb45915e1        215MB         69.6MB    U
+syamprasadraghumandala/xyzimage:latest   e6602bee5293        215MB         69.6MB
+xyzimage:latest                          e6602bee5293        215MB         69.6MB
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker image rm ing:latest
+Untagged: ing:latest
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docke image ls
+Command 'docke' not found, did you mean:
+  command 'docker' from deb docker.io (28.2.2-0ubuntu1~24.04.1)
+  command 'docker' from deb podman-docker (4.9.3+ds1-1ubuntu0.2)
+Try: sudo apt install <deb name>
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker image ls
+                                                                                                  i Info →   U  In Use
+IMAGE                                    ID             DISK USAGE   CONTENT SIZE   EXTRA
+nginximg:latest                          ea0701b69930        225MB         72.1MB
+prasad:latest                            bb4bbf944b9e        215MB         69.6MB    U
+satyanarayana:latest                     88be329b3ab7        215MB         69.6MB    U
+syamimage:latest                         990fb45915e1        215MB         69.6MB    U
+syamprasadraghumandala/xyzimage:latest   e6602bee5293        215MB         69.6MB
+xyzimage:latest                          e6602bee5293        215MB         69.6MB
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker image rm syamprasadraghumandala/xyzimage:latest
+Untagged: syamprasadraghumandala/xyzimage:latest
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker image ls
+                                                                                                  i Info →   U  In Use
+IMAGE                  ID             DISK USAGE   CONTENT SIZE   EXTRA
+nginximg:latest        ea0701b69930        225MB         72.1MB
+prasad:latest          bb4bbf944b9e        215MB         69.6MB    U
+satyanarayana:latest   88be329b3ab7        215MB         69.6MB    U
+syamimage:latest       990fb45915e1        215MB         69.6MB    U
+xyzimage:latest        e6602bee5293        215MB         69.6MB
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker pull syamprasadraghumandala
+Using default tag: latest
+Error response from daemon: pull access denied for syamprasadraghumandala, repository does not exist or may require 'docker login'
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker pull syamprasadraghumandala/xyzimage
+Using default tag: latest
+latest: Pulling from syamprasadraghumandala/xyzimage
+Digest: sha256:e6602bee5293d3a8a64f041abdc22dd79914bd00d64436354a1fc22920651922
+Status: Downloaded newer image for syamprasadraghumandala/xyzimage:latest
+docker.io/syamprasadraghumandala/xyzimage:latest
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ docker image ls
+                                                                                                  i Info →   U  In Use
+IMAGE                                    ID             DISK USAGE   CONTENT SIZE   EXTRA
+nginximg:latest                          ea0701b69930        225MB         72.1MB
+prasad:latest                            bb4bbf944b9e        215MB         69.6MB    U
+satyanarayana:latest                     88be329b3ab7        215MB         69.6MB    U
+syamimage:latest                         990fb45915e1        215MB         69.6MB    U
+syamprasadraghumandala/xyzimage:latest   e6602bee5293        215MB         69.6MB
+xyzimage:latest                          e6602bee5293        215MB         69.6MB
+ubuntu@ip-172-31-41-19:~/FIRSTDOCKER$ Read from remote host ec2-51-21-195-102.eu-north-1.compute.amazonaws.com: Connec
